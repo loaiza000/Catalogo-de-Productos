@@ -112,7 +112,7 @@ productosController.reindexProduct = async (req, res) => {
       }
     }, 2000);
 
-    return response(res, 200, true, "", "Reindexación en proceso");
+    return response(res, 202, true, "", "Reindexación en proceso");
   } catch (error) {
     return handleError(res, error);
   }
