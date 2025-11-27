@@ -58,10 +58,10 @@ URL http://localhost:3000/products
 Crea un nuevo producto. Requiere header `x-api-key` con la clave configurada en `.env`
 
 ```bash
-URL POST http://localhost:3000/products \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: ${API_KEY}" \
-  -d '{"name":"Laptop","sku":"LAP-001","price":899.99,"stock":5}'
+URL POST http://localhost:3000/products 
+  -Header: "Content-Type: application/json" 
+  -Header: "x-api-key: ${API_KEY}" 
+  -data: '{"name":"Laptop","sku":"LAP-001","price":899.99,"stock":5}'
 ```
 
 **Validaciones:**
@@ -74,18 +74,18 @@ URL POST http://localhost:3000/products \
 Actualiza el stock de un producto. Requiere header `x-api-key` con la clave configurada en `.env`
 
 ```bash
-URL PATCH http://localhost:3000/products/1/stock \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: ${API_KEY}" \
-  -d '{"stock":25}'
+URL PATCH http://localhost:3000/products/1/stock 
+  -Header: "Content-Type: application/json" 
+  -Header: "x-api-key: ${API_KEY}" 
+  -data '{"stock":25}'
 ```
 
 ### POST /products/:id/reindex
 Simula un trabajo asíncrono de reindexación. Responde con 202 y procesa en background por 2-3 segundos
 
 ```bash
-URL POST http://localhost:3000/products/1/reindex \
-  -H "x-api-key: ${API_KEY}"
+URL POST http://localhost:3000/products/1/reindex 
+  -Header: "x-api-key: ${API_KEY}"
 ```
 
 ## Tests
